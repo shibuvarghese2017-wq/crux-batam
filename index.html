@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRUX Batam Tours & Travel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#0057b8;
+--secondary:#00b4d8;
+--gold:#ffb703;
+--dark:#0a1f44;
+--light:#f8f9fa;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#fff;
+color:#333;
+}
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(10,31,68,.95);
+backdrop-filter:blur(10px);
+z-index:1000;
+padding:15px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.navbar .logo-title{
+display:flex;
+align-items:center;
+gap:10px;
+color:white;
+font-weight:700;
+}
+
+.navbar img{
+width:170px;
+height:170px;
+border-radius:50%;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:1.3rem;
+max-width:800px;
+margin-bottom:20px;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 28px;
+border:none;
+border-radius:40px;
+cursor:pointer;
+text-decoration:none;
+font-weight:600;
+}
+
+.btn-primary{
+background:var(--gold);
+color:black;
+}
+
+.btn-secondary{
+background:white;
+color:var(--primary);
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:60px 10%;
+background:var(--light);
+}
+
+.stat{
+text-align:center;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.stat h2{
+color:var(--primary);
+font-size:2rem;
+}
+
+.section{
+padding:80px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:15px;
+font-size:2.4rem;
+color:var(--primary);
+}
+
+.section-sub{
+text-align:center;
+margin-bottom:40px;
+color:#666;
+}
+
+.search-box{
+max-width:500px;
+margin:0 auto 30px;
+}
+
+.search-box input{
+width:100%;
+padding:15px;
+border:2px solid #ddd;
+border-radius:40px;
+outline:none;
+}
+
+.filters{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:12px;
+margin-bottom:35px;
+}
+
+.filter-btn{
+border:none;
+background:#e8f2ff;
+padding:10px 18px;
+border-radius:25px;
+cursor:pointer;
+font-weight:500;
+}
+
+.filter-btn.active{
+background:var(--primary);
+color:white;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card-top{
+height:180px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:60px;
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+color:white;
+}
+
+.card-body{
+padding:20px;
+}
+
+.card-body h3{
+margin-bottom:10px;
+color:var(--dark);
+}
+
+.card-body ul{
+padding-left:18px;
+}
+
+.card-body li{
+margin-bottom:6px;
+font-size:14px;
+}
+
+.enquire-btn{
+margin-top:15px;
+display:inline-block;
+background:var(--gold);
+padding:10px 20px;
+border-radius:25px;
+text-decoration:none;
+color:black;
+font-weight:600;
+}
+
+.why{
+background:var(--light);
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.why-card{
+background:white;
+padding:30px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.contact{
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+color:white;
+text-align:center;
+}
+
+.contact h2{
+margin-bottom:15px;
+}
+
+footer{
+background:#08152d;
+color:#aaa;
+text-align:center;
+padding:25px;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+color:white;
+padding:15px 22px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+z-index:999;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+@media(max-width:768px){
+
+.navbar{
+padding:15px;
+}
+
+.nav-links{
+display:none;
+}
+
+.hero h1{
+font-size:2.4rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo-title">
+<img src="logo.png" alt="CRUX Logo">
+<span>CRUX BATAM</span>
+</div>
+
+<div class="nav-links">
+<a href="#destinations">Destinations</a>
+<a href="#why">Why Us</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section class="hero">
+
+<h1>Explore Batam Beyond Boundaries</h1>
+
+<p>
+Discover beaches, islands, culture, shopping,
+nightlife, adventure and unforgettable experiences across Batam.
+</p>
+
+<div class="hero-buttons">
+<a href="#destinations" class="btn btn-primary">Explore Attractions</a>
+<a href="https://wa.me/6281234567890" class="btn btn-secondary">Book via WhatsApp</a>
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat">
+<h2>50+</h2>
+<p>Attractions</p>
+</div>
+
+<div class="stat">
+<h2>10+</h2>
+<p>Categories</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Private Tours</p>
+</div>
+
+<div class="stat">
+<h2>365</h2>
+<p>Days Available</p>
+</div>
+
+</section>
+
+<section id="destinations" class="section">
+
+<h2 class="section-title">Explore Batam</h2>
+
+<p class="section-sub">
+Search attractions or filter by category.
+</p>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search attractions...">
+</div>
+
+<div class="filters">
+<button class="filter-btn active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="landmark">Landmarks</button>
+<button class="filter-btn" data-filter="culture">Culture</button>
+<button class="filter-btn" data-filter="island">Islands</button>
+<button class="filter-btn" data-filter="nature">Nature</button>
+<button class="filter-btn" data-filter="adventure">Adventure</button>
+<button class="filter-btn" data-filter="shopping">Shopping</button>
+</div>
+
+<div class="cards">
+
+<div class="card filter-item landmark">
+<div class="card-top">🌉</div>
+<div class="card-body">
+<h3>Landmarks & Sightseeing</h3>
+<ul>
+<li>Barelang Bridge</li>
+<li>Welcome To Batam Sign</li>
+<li>Puncak Beliung</li>
+<li>Golden City Bengkong</li>
+<li>Tanjung Uma Fishing Village</li>
+</ul>
+<a href="https://wa.me/6281234567890?text=Interested%20in%20Landmarks%20Tour" class="enquire-btn">Enquire Now</a>
+</div>
+</div>
+
+<div class="card filter-item culture">
+<div class="card-top">🕌</div>
+<div class="card-body">
+<h3>Religious & Cultural</h3>
+<ul>
+<li>Jabal Arafah Mosque</li>
+<li>Sultan Mahmud Mosque</li>
+<li>Duta Maitreya Temple</li>
+<li>Tua Pek Kong Temple</li>
+<li>Ganesh Temple</li>
+</ul>
+<a href="https://wa.me/6281234567890?text=Interested%20in%20Cultural%20Tour" class="enquire-btn">Enquire Now</a>
+</div>
+</div>
+
+<div class="card filter-item island">
+<div class="card-top">🏝️</div>
+<div class="card-body">
+<h3>Beaches & Island Tourism</h3>
+<ul>
+<li>Nongsa Beach</li>
+<li>Ranoh Island</li>
+<li>Pulau Abang</li>
+<li>Marina Waterfront City</li>
+</ul>
+<a href="https://wa.me/6281234567890?text=Interested%20in%20Island%20Tour" class="enquire-btn">Enquire Now</a>
+</div>
+</div>
+
+<div class="card filter-item nature">
+<div class="card-top">🌿</div>
+<div class="card-body">
+<h3>Nature & Eco Tourism</h3>
+<ul>
+<li>Panbil Nature Reserve</li>
+<li>Mangrove Forest</li>
+<li>Batam Forest Top</li>
+<li>Batam Zoo Paradise</li>
+<li>Galang Island</li>
+</ul>
+<a href="https://wa.me/6281234567890?text=Interested%20in%20Nature%20Tour" class="enquire-btn">Enquire Now</a>
+</div>
+</div>
+
+<div class="card 
