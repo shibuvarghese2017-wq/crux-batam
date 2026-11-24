@@ -1,3 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRUX Batam Tours & Travel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">   can you help me make this mobile friendly in terms of layout
+
+<style>
+
+:root{
+--primary:#0057b8;
+--secondary:#00b4d8;
+--gold:#ffb703;
+--dark:#0a1f44;
+--light:#f8f9fa;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#fff;
+color:#333;
+}
+
 .navbar{
 position:fixed;
 top:0;
@@ -40,7 +75,7 @@ font-weight:500;
 height:100vh;
 background:
 linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80');
+url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80);
 background-size:cover;
 background-position:center;
 display:flex;
@@ -266,3 +301,166 @@ font-weight:700;
 z-index:999;
 box-shadow:0 5px 15px rgba(0,0,0,.3);
 }
+
+@media(max-width:768px){
+
+.navbar{
+padding:15px;
+}
+
+.nav-links{
+display:none;
+}
+
+.hero h1{
+font-size:2.4rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo-title">
+<img src="logo.png" alt="CRUX Logo">
+<span>CRUX BATAM</span>
+</div>
+
+<div class="nav-links">
+<a href="#destinations">Destinations</a>
+<a href="#why">Why Us</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section class="hero">
+
+<h1>Explore Batam Beyond Boundaries</h1>
+
+<p>
+Discover beaches, islands, culture, shopping,
+nightlife, adventure and unforgettable experiences across Batam.
+</p>
+
+<div class="hero-buttons">
+<a href="#destinations" class="btn btn-primary">Explore Attractions</a>
+<a href="https://wa.me/6281234567890" class="btn btn-secondary">Book via WhatsApp</a>
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat">
+<h2>50+</h2>
+<p>Attractions</p>
+</div>
+
+<div class="stat">
+<h2>10+</h2>
+<p>Categories</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Private Tours</p>
+</div>
+
+<div class="stat">
+<h2>365</h2>
+<p>Days Available</p>
+</div>
+
+</section>
+
+<section id="destinations" class="section">
+
+<h2 class="section-title">Explore Batam</h2>
+
+<p class="section-sub">
+Search attractions or filter by category.
+</p>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search attractions...">
+</div>
+
+<div class="filters">
+<button class="filter-btn active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="landmark">Landmarks</button>
+<button class="filter-btn" data-filter="culture">Culture</button>
+<button class="filter-btn" data-filter="island">Islands</button>
+<button class="filter-btn" data-filter="nature">Nature</button>
+<button class="filter-btn" data-filter="adventure">Adventure</button>
+<button class="filter-btn" data-filter="shopping">Shopping</button>
+</div>
+
+<div class="cards">
+
+<div class="card filter-item landmark">
+<div class="card-top">🌉</div>
+<div class="card-body">
+<h3>Landmarks & Sightseeing</h3>
+<ul>
+<li>Barelang Bridge</li>
+<li>Welcome To Batam Sign</li>
+<li>Puncak Beliung</li>
+<li>Golden City Bengkong</li>
+<li>Tanjung Uma Fishing Village</li>
+</ul>
+<a href="https://wa.me/6281234567890?text=Interested%20in%20Landmarks%20Tour" class="enquire-btn">Enquire Now</a>
+</div>
+</div>
+
+<div class="card filter-item culture">
+<div class="card-top">🕌</div>
+<div class="card-body">
+<h3>Religious & Cultural</h3>
+<ul>
+<li>Jabal Arafah Mosque</li>
+<li>Sultan Mahmud Mosque</li>
+<li>Duta Maitreya Temple</li>
+<li>Tua Pek Kong Temple</li>
+<li>Ganesh Temple</li>
+</ul>
+<a href="https://wa.me/6281234567890?text=Interested%20in%20Cultural%20Tour" class="enquire-btn">Enquire Now</a>
+</div>
+</div>
+
+<div class="card filter-item island">
+<div class="card-top">🏝️</div>
+<div class="card-body">
+<h3>Beaches & Island Tourism</h3>
+<ul>
+<li>Nongsa Beach</li>
+<li>Ranoh Island</li>
+<li>Pulau Abang</li>
+<li>Marina Waterfront City</li>
+</ul>
+<a href="https://wa.me/6281234567890?text=Interested%20in%20Island%20Tour" class="enquire-btn">Enquire Now</a>
+</div>
+</div>
+
+<div class="card filter-item nature">
+<div class="card-top">🌿</div>
+<div class="card-body">
+<h3>Nature & Eco Tourism</h3>
+<ul>
+<li>Panbil Nature Reserve</li>
+<li>Mangrove Forest</li>
+<li>Batam Forest Top</li>
+<li>Batam Zoo Paradise</li>
+<li>Galang Island</li>
+</ul>
+<a href="https://wa.me/6281234567890?text=Interested%20in%20Nature%20Tour" class="enquire-btn">Enquire Now</a>
+</div>
+</div>
+
+<div class="card 
